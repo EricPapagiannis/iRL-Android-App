@@ -12,14 +12,21 @@ public class HealthProvider extends Account{
         clients = new ArrayList<Client>();
     }
 
-    public void addClient(Client c){
+    public void addClient(String userName, String password, String number, String fName, String lName){
+        Client c = new Client(userName, password, number, fName, lName, this);
         clients.add(c);
+
+    }
+
+    public void writeTo(String userName, String message){
+
     }
 
     public void removeClient(Client c){
+
         clients.remove(c);
     }
-    
+
     public ArrayList<Client> getClients() {
         return clients;
     }
@@ -27,4 +34,5 @@ public class HealthProvider extends Account{
     public String getNumber() {
         return number;
     }
+
 }
