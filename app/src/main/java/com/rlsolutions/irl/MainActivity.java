@@ -13,38 +13,36 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
+    Button btn;
     NotificationManager notificationManager;
-    Button btn=(Button)findViewById(R.id.notif);
-    setContentView(R.layout.activity_main);
     int notifID=33;
     boolean isNotificActive=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        btn=(Button)findViewById(R.id.notif);
     }
     public void getNotification(View view)
     {
-        NotificationCompat.Builder notif=new
+        NotificationCompat.Builder notificBulider= (NotificationCompat.Builder) new
                 NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.ic_stat_name)
                 .setContentTitle("Pls Hire Me")
                 .setContentText("I am GOOD MAN")
-                .setTicker("This is the message")
-                .setContentIntent(pintent)
-                .build();
+                .setTicker("This is the message");
         Intent nextpage = new Intent(this, PatientDashboardActivity.class);
         TaskStackBuilder tStackBuilder=TaskStackBuilder.create(this);
         tStackBuilder.addParentStack(PatientDashboardActivity.class);
         tStackBuilder.addNextIntent(nextpage);
         PendingIntent pendingIntent=tStackBuilder.getPendingIntent(0,
                 PendingIntent.FLAG_UPDATE_CURRENT);
-        notif.setContentIntent(pendingIntent);
+        notificBulider.setContentIntent(pendingIntent);
         notificationManager =(NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(notifID,notif.build());
+        notificationManager.notify(notifID,notificBulider.build());
         isNotificActive=true;
-        
+
 
 
 
