@@ -55,7 +55,12 @@ public class PatientDashboardActivity extends AppCompatActivity {
     }
 
     void updateBar() {
-        prg.setProgress(100*(this.servingVeg + this.servingFru + this.servingMea + this.servingGra + this.servingDai)/(this.totalServings));
+        int ratio = 100*(this.servingVeg + this.servingFru + this.servingMea + this.servingGra + this.servingDai)/(this.totalServings);
+        if (ratio != 100) {
+            prg.setProgress(ratio);
+        } else {
+            Toast.makeText(getApplicationContext(), "Good job at keeping a healty diet!\nKeep up the good work!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     void addVeg(View view) {

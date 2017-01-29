@@ -71,7 +71,7 @@
         android:layout_alignBaseline="@+id/daiadd"
         android:layout_alignBottom="@+id/daiadd"
         android:layout_alignStart="@+id/measub"
-        android:onClick="subDia"/>
+        android:onClick="subDai"/>
 
     <Button
         android:text="-"
@@ -346,7 +346,8 @@
         android:textSize="30sp"
         android:layout_marginTop="11dp"
         android:layout_below="@+id/button18"
-        android:layout_alignStart="@+id/button18" />
+        android:layout_alignStart="@+id/button18"
+        android:onClick="addMea"/>
 
     <Button
         android:text="+"
@@ -357,6 +358,7 @@
         android:textSize="30sp"
         android:layout_alignBottom="@+id/table"
         android:layout_alignStart="@+id/meaadd"
-        android:layout_marginBottom="11dp" />
+        android:layout_marginBottom="11dp"
+        android:onClick="addDai"/>
 
 </RelativeLayout>
