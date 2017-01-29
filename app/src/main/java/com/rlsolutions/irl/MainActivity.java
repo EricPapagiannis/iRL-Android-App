@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
                 .setAutoCancel(true)
                 .setVibrate(new long[] {0,1000,1000,1000,1000})
                 .setSmallIcon(R.drawable.ic_stat_name)
-                .setContentTitle("Testing Notifications")
-                .setContentText("Description of notification")
-                .setTicker("This is the message");
+                .setContentTitle("Upcoming Meal!")
+                .setContentText("Please eat your Vegetable and Meat food group(s)")
+                .setTicker("Eat it at 12:30pm");
 
         Intent nextpage = new Intent(this, HealthCareProvDashboardActivity.class);
         TaskStackBuilder tStackBuilder=TaskStackBuilder.create(this);
