@@ -33,17 +33,17 @@ public class RegisterPatientActivity extends AppCompatActivity {
         String password = passwordText.getText().toString();
         String confirmPassword = confirmPasswordText.getText().toString();
 
-        if (firstName == "") {
+        if (firstName.equals("")) {
             firstNameText.setError("You have entered an invalid first name.");
-        } else if (lastName == "") {
+        } else if (lastName.equals("")) {
             lastNameText.setError("You have entered an invalid last name.");
-        } else if (userName == "") {
+        } else if (userName.equals("")) {
             userNameText.setError("You have entred an invalid username.");
-        } else if (confirmPassword != password) {
+        } else if (!(confirmPassword.equals(password))) {
             confirmPasswordText.setError("Passwords dont match");
         } else {
             Intent intent = new Intent(this, HealthCareProvDashboardActivity.class);
-            Client client = new Client(userName, password, "123", firstName, lastName);
+            //Client client = new Client(userName, password, firstName, lastName,HealthProvider h = new HealthProvider("k","m","k","m") );
             Toast.makeText(getApplicationContext(), "Patient Registered", Toast.LENGTH_SHORT).show();
             startActivity(intent);
         }
