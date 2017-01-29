@@ -21,113 +21,87 @@
         android:layout_width="40dp"
         android:textSize="30sp"
         android:layout_marginTop="13dp"
-        android:layout_below="@+id/button13"
-        android:layout_alignStart="@+id/button13" />
+        android:layout_below="@+id/fruadd"
+        android:layout_alignStart="@+id/fruadd" />
 
     <Button
         android:text="-"
         android:layout_height="wrap_content"
         android:background="@android:color/holo_red_light"
-        android:id="@+id/button9"
+        android:id="@+id/vegsub"
         android:layout_width="40dp"
         android:textSize="30sp"
-        android:layout_align="@+id/table"
-        android:layout_alignBaseline="@+id/button12"
-        android:layout_alignBottom="@+id/button12"
-        android:layout_alignStart="@+id/button11" />
+        android:layout_alignBaseline="@+id/vegadd"
+        android:layout_alignBottom="@+id/vegadd"
+        android:layout_alignStart="@+id/grasub" />
 
     <Button
         android:text="-"
         android:layout_height="wrap_content"
         android:background="@android:color/holo_red_light"
-        android:id="@+id/button14"
+        android:id="@+id/vegsub"
         android:layout_width="40dp"
         android:textSize="30sp"
-        android:layout_align="@+id/table"
-        android:layout_alignBaseline="@+id/button13"
-        android:layout_alignBottom="@+id/button13"
-        android:layout_alignStart="@+id/button17" />
+        android:layout_alignBaseline="@+id/fruadd"
+        android:layout_alignBottom="@+id/fruadd"
+        android:layout_alignStart="@+id/daisub" />
 
     <Button
         android:text="+"
         android:background="@android:color/holo_blue_light"
         android:layout_height="wrap_content"
-        android:id="@+id/button13"
+        android:id="@+id/fruadd"
         android:layout_width="40dp"
         android:textSize="30sp"
         android:layout_marginTop="8dp"
-        android:layout_below="@+id/button12"
-        android:layout_alignStart="@+id/button12" />
-
-    <Button
-        android:text="+"
-        android:background="@android:color/holo_blue_light"
-        android:layout_height="wrap_content"
-        android:id="@+id/button10"
-        android:layout_width="40dp"
-        android:textSize="30sp"
-        android:layout_alignBottom="@+id/table"
-        android:layout_alignStart="@+id/button20" />
+        android:layout_below="@+id/vegadd"
+        android:layout_alignStart="@+id/vegadd" />
 
     <Button
         android:text="-"
         android:layout_height="wrap_content"
         android:background="@android:color/holo_red_light"
-        android:id="@+id/button17"
+        android:id="@+id/daisub"
         android:layout_width="40dp"
         android:textSize="30sp"
-        android:layout_align="@+id/table"
-        android:layout_alignBaseline="@+id/button10"
-        android:layout_alignBottom="@+id/button10"
-        android:layout_alignStart="@+id/button21" />
+        android:layout_alignBaseline="@+id/daiadd"
+        android:layout_alignBottom="@+id/daiadd"
+        android:layout_alignStart="@+id/measub" />
 
     <Button
         android:text="-"
         android:layout_height="wrap_content"
         android:background="@android:color/holo_red_light"
-        android:id="@+id/button21"
+        android:id="@+id/measub"
         android:layout_width="40dp"
         android:textSize="30sp"
-        android:layout_align="@+id/table"
         android:layout_marginEnd="12dp"
-        android:layout_alignBaseline="@+id/button20"
-        android:layout_alignBottom="@+id/button20"
+        android:layout_alignBaseline="@+id/meaadd"
+        android:layout_alignBottom="@+id/meaadd"
         android:layout_alignParentEnd="true" />
 
     <Button
         android:text="+"
         android:background="@android:color/holo_blue_light"
         android:layout_height="wrap_content"
-        android:id="@+id/button20"
+        android:id="@+id/graadd"
         android:layout_width="40dp"
         android:textSize="30sp"
-        android:layout_below="@+id/button18"
-        android:layout_alignStart="@+id/button18"
-        android:layout_marginTop="8dp" />
-
-    <Button
-        android:text="+"
-        android:background="@android:color/holo_blue_light"
-        android:layout_height="wrap_content"
-        android:id="@+id/button19"
-        android:layout_width="40dp"
-        android:textSize="30sp"
-        android:layout_above="@+id/button20"
+        android:layout_above="@+id/meaadd"
         android:layout_alignStart="@+id/button18" />
 
     <Button
         android:text="-"
         android:layout_height="wrap_content"
         android:background="@android:color/holo_red_light"
-        android:id="@+id/button11"
+        android:id="@+id/grasub"
         android:layout_width="40dp"
         android:textSize="30sp"
-        android:layout_align="@+id/table"
-        android:layout_above="@+id/button20"
-        android:layout_alignStart="@+id/button14" />
+        android:layout_above="@+id/meaadd"
+        android:layout_alignStart="@+id/vegsub" />
 
     <TextView
-        android:text="PatientName"
+        android:text="Steve Smith"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -154,18 +128,18 @@
         android:text="+"
         android:background="@android:color/holo_blue_light"
         android:layout_height="wrap_content"
-        android:id="@+id/button12"
+        android:id="@+id/vegadd"
         android:layout_width="40dp"
         android:textSize="30sp"
         android:layout_marginTop="59dp"
         android:layout_marginEnd="18dp"
         android:layout_alignTop="@+id/table"
-        android:layout_toStartOf="@+id/button9" />
+        android:layout_toStartOf="@+id/vegsub" />
 
     <TableLayout
         android:id="@+id/table"
          android:orientation="horizontal"
-        android:layout_height="340dp"
+        android:layout_height="355dp"
         android:layout_width="210dp"
         android:shrinkColumns="*"
         android:stretchColumns="*"
@@ -340,29 +314,40 @@
         android:id="@+id/editText2"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/chatbubble" />
+        android:layout_toStartOf="@+id/chatbubble"
+        android:textSize="14sp" />
 
     <ImageButton
         app:srcCompat="@android:drawable/stat_notify_chat"
         android:id="@+id/chatbubble"
         android:scaleX="2"
         android:scaleY="2"
-        android:background=""
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/button12" />
+        android:background="@android:color/transparent"
+        android:layout_toEndOf="@+id/vegadd" />
 
-    <EditText
-        android:layout_width="wrap_content"
+    <Button
+        android:text="+"
+        android:background="@android:color/holo_blue_light"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:layout_below="@+id/table"
-        android:layout_alignParentStart="true"
-        android:id="@+id/editText3"
-        android:layout_above="@+id/editText2"
-        android:layout_toStartOf="@+id/button17"
-        tools:text='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"xxxxxXX"yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy' />
+        android:id="@+id/meaadd"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/button18"
+        android:layout_alignStart="@+id/button18" />
+
+    <Button
+        android:text="+"
+        android:background="@android:color/holo_blue_light"
+        android:layout_height="wrap_content"
+        android:id="@+id/daiadd"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_alignBottom="@+id/table"
+        android:layout_alignStart="@+id/meaadd"
+        android:layout_marginBottom="11dp" />
 
 </RelativeLayout>
