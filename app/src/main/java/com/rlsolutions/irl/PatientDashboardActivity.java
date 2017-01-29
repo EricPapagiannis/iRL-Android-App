@@ -12,5 +12,6 @@ public class PatientDashboardActivity extends AppCompatActivity {
         Intent intent = getIntent();
         intent = new Intent(this, MainActivity.class);
         setContentView(R.layout.activity_patient_dashboard);
+
     }
 }

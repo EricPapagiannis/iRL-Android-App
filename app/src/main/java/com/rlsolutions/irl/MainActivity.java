@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     {
         NotificationCompat.Builder notificBulider= (NotificationCompat.Builder) new
                 NotificationCompat.Builder(this)
+                .setAutoCancel(true)
                 .setSmallIcon(R.drawable.ic_stat_name)
                 .setContentTitle("Pls Hire Me")
                 .setContentText("I am GOOD MAN")
