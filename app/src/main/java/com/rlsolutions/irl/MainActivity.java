@@ -14,12 +14,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void goToPatientDashboard() {
+    public void goToPatientDashboard(View view) {
         Intent intent = new Intent(this, PatientDashboardActivity.class);
         startActivity(intent);
     }
 
-    public void goToHealthCareProvDashboard() {
+    public void goToHealthCareProvDashboard(View view) {
         Intent intent = new Intent(this, HealthCareProvDashboardActivity.class);
         startActivity(intent);
     }
@@ -27,12 +27,21 @@ public class MainActivity extends AppCompatActivity {
         //Some code
         return true;
     }
+    /*
     public void Navigate(View view){
-        if (isHCP()){
-            goToHealthCareProvDashboard();
-        }
-        else {
-            goToPatientDashboard();
+        if (login()) {
+            if (isHCP()) {
+                goToHealthCareProvDashboard();
+            } else {
+                goToPatientDashboard();
+            }
+        } else {
         }
     }
+
+    private boolean login() {
+        return true;
+    }
+    */
 }
+

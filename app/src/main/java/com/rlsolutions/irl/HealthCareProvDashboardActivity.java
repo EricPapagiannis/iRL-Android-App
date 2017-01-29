@@ -9,7 +9,9 @@ public class HealthCareProvDashboardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = getIntent();
         setContentView(R.layout.activity_health_care_prov_dashboard);
+        intent = new Intent(this, MainActivity.class);
+
     }
 }
