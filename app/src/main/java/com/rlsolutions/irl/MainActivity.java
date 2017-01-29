@@ -6,11 +6,15 @@ import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
 import android.view.View;
 import android.widget.Button;
+import android.content.BroadcastReceiver;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,16 +30,20 @@ public class MainActivity extends AppCompatActivity {
     }
     public void getNotification(View view)
     {
+        Uri alarmSound= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificBulider= (NotificationCompat.Builder) new
                 NotificationCompat.Builder(this)
+                .setSound(alarmSound)
                 .setAutoCancel(true)
+                .setVibrate(new long[] {0,1000,1000,1000,1000})
                 .setSmallIcon(R.drawable.ic_stat_name)
                 .setContentTitle("Pls Hire Me")
                 .setContentText("I am GOOD MAN")
                 .setTicker("This is the message");
-        Intent nextpage = new Intent(this, PatientDashboardActivity.class);
+
+        Intent nextpage = new Intent(this, HealthCareProvDashboardActivity.class);
         TaskStackBuilder tStackBuilder=TaskStackBuilder.create(this);
-        tStackBuilder.addParentStack(PatientDashboardActivity.class);
+        tStackBuilder.addParentStack(HealthCareProvDashboardActivity.class);
         tStackBuilder.addNextIntent(nextpage);
         PendingIntent pendingIntent=tStackBuilder.getPendingIntent(0,
                 PendingIntent.FLAG_UPDATE_CURRENT);
