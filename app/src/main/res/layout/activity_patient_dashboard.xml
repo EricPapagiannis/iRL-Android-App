@@ -11,5 +11,11 @@
     tools:context="com.rlsolutions.irl.PatientDashboardActivity"
     android:background="@drawable/background">
 
+    <EditText android:id="@+id/enter_email"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="Patient DB" />
+
 
 </RelativeLayout>
