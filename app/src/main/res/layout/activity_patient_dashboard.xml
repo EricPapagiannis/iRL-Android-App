@@ -36,17 +36,6 @@
         android:layout_toStartOf="@+id/button9"
         android:layout_marginEnd="27dp" />
 
-    <ProgressBar
-        style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/progressBar"
-        android:indeterminate="false"
-        android:fadeScrollbars="false"
-        android:layout_height="35dp"
-        android:alpha="0.5"
-        android:progress="10" />
-
     <TableLayout
         android:id="@+id/table"
          android:orientation="horizontal"
@@ -316,5 +305,40 @@
         android:layout_align="@+id/table"
         android:layout_above="@+id/button20"
         android:layout_alignStart="@+id/button14" />
+
+    <TextView
+        android:text="PatientName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/patientname"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
+
+    <ProgressBar
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:id="@+id/progressBar"
+        android:indeterminate="false"
+        android:fadeScrollbars="false"
+        android:layout_height="35dp"
+        android:alpha="0.5"
+        android:progress="10"
+        android:layout_below="@+id/patientname"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <ImageButton
+        app:srcCompat="@android:drawable/stat_notify_chat"
+        android:id="@+id/chatbubble"
+        android:scaleX="4"
+        android:scaleY="4"
+        android:background=""
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
 
 </RelativeLayout>
