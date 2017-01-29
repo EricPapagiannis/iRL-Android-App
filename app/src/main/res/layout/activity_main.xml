@@ -73,4 +73,14 @@
         android:layout_alignBottom="@+id/button"
         android:layout_alignParentEnd="true" />
 
+    <Button
+        android:text="Notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp"
+        android:id="@+id/notif"
+        android:onClick="getNotification" />
+
 </RelativeLayout>
