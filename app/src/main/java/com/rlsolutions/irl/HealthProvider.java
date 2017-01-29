@@ -16,6 +16,10 @@ public class HealthProvider extends Account{
         clients.add(c);
     }
 
+    public void removeClient(Client c){
+        clients.remove(c);
+    }
+    
     public ArrayList<Client> getClients() {
         return clients;
     }
