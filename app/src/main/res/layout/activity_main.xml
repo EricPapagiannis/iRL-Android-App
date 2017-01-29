@@ -57,10 +57,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:onClick="Navigate"
         android:id="@+id/button"
         android:layout_below="@+id/editText"
         android:layout_alignParentStart="true"
+        android:onClick="goToHealthCareProvDashboard"
         android:layout_marginTop="10dp" />
 
 </RelativeLayout>

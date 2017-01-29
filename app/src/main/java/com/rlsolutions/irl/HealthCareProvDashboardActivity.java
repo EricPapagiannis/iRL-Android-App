@@ -11,7 +11,7 @@ public class HealthCareProvDashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         setContentView(R.layout.activity_health_care_prov_dashboard);
-
+        intent = new Intent(this, MainActivity.class);
 
     }
 }

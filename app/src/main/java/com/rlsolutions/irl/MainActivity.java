@@ -19,20 +19,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToHealthCareProvDashboard() {
+    public void goToHealthCareProvDashboard(View view) {
         Intent intent = new Intent(this, HealthCareProvDashboardActivity.class);
         startActivity(intent);
     }
     public boolean isHCP(){
         //Some code
         return true;
-    }
-    public void Navigate(View view){
-        if (isHCP()){
-            goToHealthCareProvDashboard();
-        }
-        else {
-            goToPatientDashboard();
-        }
     }
 }
