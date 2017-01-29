@@ -59,7 +59,7 @@ public class PatientDashboardActivity extends AppCompatActivity {
         if (ratio != 100) {
             prg.setProgress(ratio);
         } else {
-            Toast.makeText(getApplicationContext(), "Good job at keeping a healty diet!\nKeep up the good work!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Good job at keeping a healty diet!\nKeep up the good work!", Toast.LENGTH_LONG).show();
         }
     }
 
