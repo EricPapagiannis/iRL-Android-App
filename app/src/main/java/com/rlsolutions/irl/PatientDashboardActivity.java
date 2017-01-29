@@ -90,4 +90,15 @@ public class PatientDashboardActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Please follow your diet!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    void subFru(View view) {
+        if (this.servingFru> 0) {
+            this.servingFru--;
+            TextView txt = (TextView) findViewById(R.id.servingsfruit);
+            txt.setText(this.servingFru + "/"  + this.totalServingFru);
+            updateBar();
+        } else {
+            Toast.makeText(getApplicationContext(), "Invalid!", Toast.LENGTH_SHORT).show();
+        }
+    }
 }

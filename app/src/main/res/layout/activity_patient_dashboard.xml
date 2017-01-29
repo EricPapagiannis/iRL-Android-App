@@ -22,7 +22,8 @@
         android:textSize="30sp"
         android:layout_marginTop="13dp"
         android:layout_below="@+id/fruadd"
-        android:layout_alignStart="@+id/fruadd" />
+        android:layout_alignStart="@+id/fruadd"
+        android:onClick="addGra"/>
 
     <Button
         android:text="-"
@@ -33,7 +34,8 @@
         android:textSize="30sp"
         android:layout_alignBaseline="@+id/vegadd"
         android:layout_alignBottom="@+id/vegadd"
-        android:layout_alignStart="@+id/grasub" />
+        android:layout_alignStart="@+id/grasub"
+        android:onClick="subVeg"/>
 
     <Button
         android:text="-"
@@ -44,7 +46,8 @@
         android:textSize="30sp"
         android:layout_alignBaseline="@+id/fruadd"
         android:layout_alignBottom="@+id/fruadd"
-        android:layout_alignStart="@+id/daisub" />
+        android:layout_alignStart="@+id/daisub"
+        android:onClick="subFru"/>
 
     <Button
         android:text="+"
@@ -56,7 +59,7 @@
         android:layout_marginTop="8dp"
         android:layout_below="@+id/vegadd"
         android:layout_alignStart="@+id/vegadd"
-        android:onClick="fruAdd" />
+        android:onClick="addFru" />
 
     <Button
         android:text="-"
@@ -67,7 +70,8 @@
         android:textSize="30sp"
         android:layout_alignBaseline="@+id/daiadd"
         android:layout_alignBottom="@+id/daiadd"
-        android:layout_alignStart="@+id/measub" />
+        android:layout_alignStart="@+id/measub"
+        android:onClick="subDia"/>
 
     <Button
         android:text="-"
@@ -79,7 +83,8 @@
         android:layout_marginEnd="12dp"
         android:layout_alignBaseline="@+id/meaadd"
         android:layout_alignBottom="@+id/meaadd"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="subMea"/>
 
     <Button
         android:text="+"
@@ -89,7 +94,8 @@
         android:layout_width="40dp"
         android:textSize="30sp"
         android:layout_above="@+id/meaadd"
-        android:layout_alignStart="@+id/button18" />
+        android:layout_alignStart="@+id/button18"
+        android:onClick="addGra"/>
 
     <Button
         android:text="-"
@@ -99,7 +105,8 @@
         android:layout_width="40dp"
         android:textSize="30sp"
         android:layout_above="@+id/meaadd"
-        android:layout_alignStart="@+id/frusub" />
+        android:layout_alignStart="@+id/frusub"
+        android:onClick="subGra"/>
 
     <TextView
         android:text="Steve Smith"
@@ -140,7 +147,7 @@
 
     <TableLayout
         android:id="@+id/table"
-         android:orientation="horizontal"
+        android:orientation="horizontal"
         android:layout_height="355dp"
         android:layout_width="210dp"
         android:shrinkColumns="*"
@@ -155,25 +162,25 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent">
 
-        <TextView
-            android:id="@+id/headingfoodgroup"
-            android:text="Food Group"
-            android:layout_weight="1"
-            android:background="#C0C0C0"
-            android:textColor="#000000"
-            android:padding="20dip"
-            android:gravity="center"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/headingfoodgroup"
+                android:text="Food Group"
+                android:layout_weight="1"
+                android:background="#C0C0C0"
+                android:textColor="#000000"
+                android:padding="20dip"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/headingservings"
-            android:text="Servings"
-            android:layout_weight="1"
-            android:background="#C0C0C0"
-            android:textColor="#000000"
-            android:padding="20dip"
-            android:gravity="center"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/headingservings"
+                android:text="Servings"
+                android:layout_weight="1"
+                android:background="#C0C0C0"
+                android:textColor="#000000"
+                android:padding="20dip"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
         </TableRow>
 
         <TableRow
