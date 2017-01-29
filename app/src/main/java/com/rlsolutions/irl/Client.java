@@ -7,13 +7,11 @@ import java.util.ArrayList;
 import java.io.PrintWriter;
 
 public class Client extends Account{
-    private String number;
     private HealthProvider hProv;
     public String fName = "coversation_";
 
-    public Client(String userName, String password, String number, String fName, String lName, HealthProvider h){
+    public Client(String userName, String password, String fName, String lName, HealthProvider h){
         super(userName, password, fName, lName);
-        this.number = number;
         this.hProv = h;
 
         this.fName += userName + ".txt";
@@ -45,13 +43,5 @@ public class Client extends Account{
 
     public HealthProvider getProvider(){
         return this.hProv;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
     }
 }

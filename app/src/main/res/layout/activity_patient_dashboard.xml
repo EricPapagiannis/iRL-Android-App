@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_patient_dashboard"
     android:layout_width="match_parent"
@@ -11,11 +12,309 @@
     tools:context="com.rlsolutions.irl.PatientDashboardActivity"
     android:background="@drawable/background">
 
-    <EditText android:id="@+id/enter_email"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:hint="Patient DB" />
 
+    <Button
+        android:text="+"
+        android:background="@android:color/holo_blue_light"
+        android:layout_height="wrap_content"
+        android:id="@+id/button18"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/button13"
+        android:layout_alignStart="@+id/button13" />
+
+    <Button
+        android:text="+"
+        android:background="@android:color/holo_blue_light"
+        android:layout_height="wrap_content"
+        android:id="@+id/button12"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_marginTop="60dp"
+        android:layout_alignTop="@+id/table"
+        android:layout_toStartOf="@+id/button9"
+        android:layout_marginEnd="27dp" />
+
+    <ProgressBar
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/progressBar"
+        android:indeterminate="false"
+        android:fadeScrollbars="false"
+        android:layout_height="35dp"
+        android:alpha="0.5"
+        android:progress="10" />
+
+    <TableLayout
+        android:id="@+id/table"
+         android:orientation="horizontal"
+        android:layout_height="340dp"
+        android:layout_width="225dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:shrinkColumns="*"
+        android:stretchColumns="*"
+        android:background="#ffffff"
+        android:alpha="0.75">
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+        <TextView
+            android:id="@+id/headingfoodgroup"
+            android:text="Food Group"
+            android:layout_weight="1"
+            android:background="#C0C0C0"
+            android:textColor="#000000"
+            android:padding="20dip"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/headingservings"
+            android:text="Servings"
+            android:layout_weight="1"
+            android:background="#C0C0C0"
+            android:textColor="#000000"
+            android:padding="20dip"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <TextView
+                android:id="@+id/groupvegetables"
+                android:text="Vegetables"
+                android:layout_weight="1"
+                android:background="#dcdcdc"
+                android:textColor="#000000"
+                android:padding="20dip"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/servingsvegetables"
+                android:text="0 / 0"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:textColor="#000000"
+                android:padding="20dip"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <TextView
+                android:id="@+id/groupfruit"
+                android:text="Fruit"
+                android:layout_weight="1"
+                android:background="#dcdcdc"
+                android:textColor="#000000"
+                android:padding="20dip"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/servingsfruit"
+                android:text="0 / 0"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:textColor="#000000"
+                android:padding="20dip"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <TextView
+                android:id="@+id/groupgrain"
+                android:text="Grains"
+                android:layout_weight="1"
+                android:background="#dcdcdc"
+                android:textColor="#000000"
+                android:padding="20dip"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/servingsgrains"
+                android:text="0 / 0"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:textColor="#000000"
+                android:padding="20dip"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <TextView
+                android:id="@+id/groupmeat"
+                android:text="Meat"
+                android:layout_weight="1"
+                android:background="#dcdcdc"
+                android:textColor="#000000"
+                android:padding="20dip"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/servingsmeat"
+                android:text="0 / 0"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:textColor="#000000"
+                android:padding="20dip"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <TextView
+                android:id="@+id/groupdairy"
+                android:text="Dairy"
+                android:layout_weight="1"
+                android:background="#dcdcdc"
+                android:textColor="#000000"
+                android:padding="20dip"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/servingsdairy"
+                android:text="0 / 0"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:textColor="#000000"
+                android:padding="20dip"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:text="-"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:id="@+id/button9"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_align="@+id/table"
+        android:layout_alignBaseline="@+id/button12"
+        android:layout_alignBottom="@+id/button12"
+        android:layout_alignStart="@+id/button11" />
+
+    <Button
+        android:text="-"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:id="@+id/button14"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_align="@+id/table"
+        android:layout_alignBaseline="@+id/button13"
+        android:layout_alignBottom="@+id/button13"
+        android:layout_alignStart="@+id/button17" />
+
+    <Button
+        android:text="+"
+        android:background="@android:color/holo_blue_light"
+        android:layout_height="wrap_content"
+        android:id="@+id/button13"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/button12"
+        android:layout_alignStart="@+id/button12" />
+
+    <Button
+        android:text="+"
+        android:background="@android:color/holo_blue_light"
+        android:layout_height="wrap_content"
+        android:id="@+id/button10"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_alignBottom="@+id/table"
+        android:layout_alignStart="@+id/button20" />
+
+    <Button
+        android:text="-"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:id="@+id/button17"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_align="@+id/table"
+        android:layout_alignBaseline="@+id/button10"
+        android:layout_alignBottom="@+id/button10"
+        android:layout_alignStart="@+id/button21" />
+
+    <Button
+        android:text="-"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:id="@+id/button21"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_align="@+id/table"
+        android:layout_marginEnd="12dp"
+        android:layout_alignBaseline="@+id/button20"
+        android:layout_alignBottom="@+id/button20"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="+"
+        android:background="@android:color/holo_blue_light"
+        android:layout_height="wrap_content"
+        android:id="@+id/button20"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_below="@+id/button18"
+        android:layout_alignStart="@+id/button18"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:text="+"
+        android:background="@android:color/holo_blue_light"
+        android:layout_height="wrap_content"
+        android:id="@+id/button19"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_above="@+id/button20"
+        android:layout_alignStart="@+id/button18" />
+
+    <Button
+        android:text="-"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:id="@+id/button11"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_align="@+id/table"
+        android:layout_above="@+id/button20"
+        android:layout_alignStart="@+id/button14" />
 
 </RelativeLayout>

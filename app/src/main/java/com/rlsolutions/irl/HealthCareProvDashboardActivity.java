@@ -24,4 +24,9 @@ public class HealthCareProvDashboardActivity extends AppCompatActivity {
         Button myButton = (Button) findViewById(R.id.delete_button);
         myButton.setEnabled(true);
     }
+
+    public void goToRegisterPage(View view){
+        Intent intent =  new Intent(this, RegisterPatientActivity.class);
+        startActivity(intent);
+    }
 }

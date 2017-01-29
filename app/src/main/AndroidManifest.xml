@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rlsolutions.irl">
-    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,11 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
- 
-
-        <activity android:name=".HealthCareProvDashboardActivity"> </activity>
-        <activity android:name=".PatientDashboardActivity"> </activity>
+        <activity android:name=".HealthCareProvDashboardActivity"></activity>
+        <activity android:name=".PatientDashboardActivity"></activity>
+        <activity android:name=".RegisterPatientActivity"></activity>
     </application>
 
 </manifest>
