@@ -3,6 +3,7 @@ package com.rlsolutions.irl;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,22 +56,32 @@ public class PatientDashboardActivity extends AppCompatActivity {
 
     void updateBar() {
         prg.setProgress(100*(this.servingVeg + this.servingFru + this.servingMea + this.servingGra + this.servingDai)/(this.totalServings));
-        setContentView(R.layout.activity_patient_dashboard);
     }
 
-    void addVeg() {
-        if (this.servingVeg <= this.totalServingVeg) {
+    void addVeg(View view) {
+        if (this.servingVeg < this.totalServingVeg) {
             this.servingVeg++;
             TextView txt = (TextView) findViewById(R.id.servingsvegetables);
-            txt.setText(servingVeg + "/"  + totalServingVeg);
+            txt.setText(this.servingVeg + "/"  + this.totalServingVeg);
             updateBar();
         } else {
             Toast.makeText(getApplicationContext(), "Please follow your diet!", Toast.LENGTH_SHORT).show();
         }
     }
 
-    void addFru() {
-        if (this.servingFru <= this.totalServingFru) {
+    void subVeg(View view) {
+        if (this.servingVeg > 0) {
+            this.servingVeg--;
+            TextView txt = (TextView) findViewById(R.id.servingsvegetables);
+            txt.setText(this.servingVeg + "/"  + this.totalServingVeg);
+            updateBar();
+        } else {
+            Toast.makeText(getApplicationContext(), "Invalid!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    void addFru(View view) {
+        if (this.servingFru < this.totalServingFru) {
             this.servingFru++;
             TextView txt = (TextView) findViewById(R.id.servingsfruit);
             txt.setText(servingFru + "/"  + totalServingFru);
