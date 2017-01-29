@@ -25,28 +25,155 @@
         android:layout_alignStart="@+id/button13" />
 
     <Button
+        android:text="-"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:id="@+id/button9"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_align="@+id/table"
+        android:layout_alignBaseline="@+id/button12"
+        android:layout_alignBottom="@+id/button12"
+        android:layout_alignStart="@+id/button11" />
+
+    <Button
+        android:text="-"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:id="@+id/button14"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_align="@+id/table"
+        android:layout_alignBaseline="@+id/button13"
+        android:layout_alignBottom="@+id/button13"
+        android:layout_alignStart="@+id/button17" />
+
+    <Button
+        android:text="+"
+        android:background="@android:color/holo_blue_light"
+        android:layout_height="wrap_content"
+        android:id="@+id/button13"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/button12"
+        android:layout_alignStart="@+id/button12" />
+
+    <Button
+        android:text="+"
+        android:background="@android:color/holo_blue_light"
+        android:layout_height="wrap_content"
+        android:id="@+id/button10"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_alignBottom="@+id/table"
+        android:layout_alignStart="@+id/button20" />
+
+    <Button
+        android:text="-"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:id="@+id/button17"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_align="@+id/table"
+        android:layout_alignBaseline="@+id/button10"
+        android:layout_alignBottom="@+id/button10"
+        android:layout_alignStart="@+id/button21" />
+
+    <Button
+        android:text="-"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:id="@+id/button21"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_align="@+id/table"
+        android:layout_marginEnd="12dp"
+        android:layout_alignBaseline="@+id/button20"
+        android:layout_alignBottom="@+id/button20"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="+"
+        android:background="@android:color/holo_blue_light"
+        android:layout_height="wrap_content"
+        android:id="@+id/button20"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_below="@+id/button18"
+        android:layout_alignStart="@+id/button18"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:text="+"
+        android:background="@android:color/holo_blue_light"
+        android:layout_height="wrap_content"
+        android:id="@+id/button19"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_above="@+id/button20"
+        android:layout_alignStart="@+id/button18" />
+
+    <Button
+        android:text="-"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:id="@+id/button11"
+        android:layout_width="40dp"
+        android:textSize="30sp"
+        android:layout_align="@+id/table"
+        android:layout_above="@+id/button20"
+        android:layout_alignStart="@+id/button14" />
+
+    <TextView
+        android:text="PatientName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/patientname"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
+
+    <ProgressBar
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:id="@+id/progressBar"
+        android:indeterminate="false"
+        android:fadeScrollbars="false"
+        android:layout_height="35dp"
+        android:alpha="0.5"
+        android:progress="10"
+        android:layout_below="@+id/patientname"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <Button
         android:text="+"
         android:background="@android:color/holo_blue_light"
         android:layout_height="wrap_content"
         android:id="@+id/button12"
         android:layout_width="40dp"
         android:textSize="30sp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="18dp"
         android:layout_alignTop="@+id/table"
-        android:layout_toStartOf="@+id/button9"
-        android:layout_marginEnd="27dp" />
+        android:layout_toStartOf="@+id/button9" />
 
     <TableLayout
         android:id="@+id/table"
          android:orientation="horizontal"
         android:layout_height="340dp"
-        android:layout_width="225dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
+        android:layout_width="210dp"
         android:shrinkColumns="*"
         android:stretchColumns="*"
         android:background="#ffffff"
-        android:alpha="0.75">
+        android:alpha="0.75"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/progressBar"
+        android:layout_alignParentStart="true">
         <TableRow
             android:id="@+id/tableRow1"
             android:layout_height="wrap_content"
@@ -204,141 +331,38 @@
         </TableRow>
     </TableLayout>
 
-    <Button
-        android:text="-"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_light"
-        android:id="@+id/button9"
-        android:layout_width="40dp"
-        android:textSize="30sp"
-        android:layout_align="@+id/table"
-        android:layout_alignBaseline="@+id/button12"
-        android:layout_alignBottom="@+id/button12"
-        android:layout_alignStart="@+id/button11" />
-
-    <Button
-        android:text="-"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_light"
-        android:id="@+id/button14"
-        android:layout_width="40dp"
-        android:textSize="30sp"
-        android:layout_align="@+id/table"
-        android:layout_alignBaseline="@+id/button13"
-        android:layout_alignBottom="@+id/button13"
-        android:layout_alignStart="@+id/button17" />
-
-    <Button
-        android:text="+"
-        android:background="@android:color/holo_blue_light"
-        android:layout_height="wrap_content"
-        android:id="@+id/button13"
-        android:layout_width="40dp"
-        android:textSize="30sp"
-        android:layout_marginTop="8dp"
-        android:layout_below="@+id/button12"
-        android:layout_alignStart="@+id/button12" />
-
-    <Button
-        android:text="+"
-        android:background="@android:color/holo_blue_light"
-        android:layout_height="wrap_content"
-        android:id="@+id/button10"
-        android:layout_width="40dp"
-        android:textSize="30sp"
-        android:layout_alignBottom="@+id/table"
-        android:layout_alignStart="@+id/button20" />
-
-    <Button
-        android:text="-"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_light"
-        android:id="@+id/button17"
-        android:layout_width="40dp"
-        android:textSize="30sp"
-        android:layout_align="@+id/table"
-        android:layout_alignBaseline="@+id/button10"
-        android:layout_alignBottom="@+id/button10"
-        android:layout_alignStart="@+id/button21" />
-
-    <Button
-        android:text="-"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_light"
-        android:id="@+id/button21"
-        android:layout_width="40dp"
-        android:textSize="30sp"
-        android:layout_align="@+id/table"
-        android:layout_marginEnd="12dp"
-        android:layout_alignBaseline="@+id/button20"
-        android:layout_alignBottom="@+id/button20"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:text="+"
-        android:background="@android:color/holo_blue_light"
-        android:layout_height="wrap_content"
-        android:id="@+id/button20"
-        android:layout_width="40dp"
-        android:textSize="30sp"
-        android:layout_below="@+id/button18"
-        android:layout_alignStart="@+id/button18"
-        android:layout_marginTop="8dp" />
-
-    <Button
-        android:text="+"
-        android:background="@android:color/holo_blue_light"
-        android:layout_height="wrap_content"
-        android:id="@+id/button19"
-        android:layout_width="40dp"
-        android:textSize="30sp"
-        android:layout_above="@+id/button20"
-        android:layout_alignStart="@+id/button18" />
-
-    <Button
-        android:text="-"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_light"
-        android:id="@+id/button11"
-        android:layout_width="40dp"
-        android:textSize="30sp"
-        android:layout_align="@+id/table"
-        android:layout_above="@+id/button20"
-        android:layout_alignStart="@+id/button14" />
-
-    <TextView
-        android:text="PatientName"
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/patientname"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="normal|bold" />
-
-    <ProgressBar
-        style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:id="@+id/progressBar"
-        android:indeterminate="false"
-        android:fadeScrollbars="false"
-        android:layout_height="35dp"
-        android:alpha="0.5"
-        android:progress="10"
-        android:layout_below="@+id/patientname"
+        android:inputType="textPersonName"
+        android:text="Send a message to your Nutitionist..."
+        android:ems="10"
+        android:id="@+id/editText2"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
+        android:layout_toStartOf="@+id/chatbubble" />
 
     <ImageButton
         app:srcCompat="@android:drawable/stat_notify_chat"
         android:id="@+id/chatbubble"
-        android:scaleX="4"
-        android:scaleY="4"
+        android:scaleX="2"
+        android:scaleY="2"
         android:background=""
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:layout_toEndOf="@+id/button12" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:layout_below="@+id/table"
+        android:layout_alignParentStart="true"
+        android:id="@+id/editText3"
+        android:layout_above="@+id/editText2"
+        android:layout_toStartOf="@+id/button17"
+        tools:text='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"xxxxxXX"yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy' />
 
 </RelativeLayout>
