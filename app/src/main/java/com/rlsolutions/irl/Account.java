@@ -5,11 +5,9 @@ public class Account {
     protected String password;
     protected String fName;
     protected String lName;
-    public String number;
 
     public Account(String userName, String password, String fName, String lName){
         this.userName = userName;
-        this.password = password;
         this.fName = fName;
         this.lName = lName;
     }
@@ -45,13 +43,4 @@ public class Account {
     public void setlName(String lName) {
         this.lName = lName;
     }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
 }
