@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
                 .setAutoCancel(true)
                 .setVibrate(new long[] {0,1000,1000,1000,1000})
                 .setSmallIcon(R.drawable.ic_stat_name)
-                .setContentTitle("Pls Hire Me")
-                .setContentText("I am GOOD MAN")
+                .setContentTitle("Testing Notifications")
+                .setContentText("Description of notification")
                 .setTicker("This is the message");
 
         Intent nextpage = new Intent(this, HealthCareProvDashboardActivity.class);
