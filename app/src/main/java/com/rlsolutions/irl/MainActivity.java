@@ -28,11 +28,17 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
     public void Navigate(View view){
-        if (isHCP()){
-            goToHealthCareProvDashboard();
+        if (login()) {
+            if (isHCP()) {
+                goToHealthCareProvDashboard();
+            } else {
+                goToPatientDashboard();
+            }
+        } else {
         }
-        else {
-            goToPatientDashboard();
-        }
+    }
+
+    private boolean login() {
+        return true;
     }
 }
