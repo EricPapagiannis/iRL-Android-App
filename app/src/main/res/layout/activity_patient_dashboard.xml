@@ -39,7 +39,7 @@
         android:text="-"
         android:layout_height="wrap_content"
         android:background="@android:color/holo_red_light"
-        android:id="@+id/vegsub"
+        android:id="@+id/frusub"
         android:layout_width="40dp"
         android:textSize="30sp"
         android:layout_alignBaseline="@+id/fruadd"
@@ -98,7 +98,7 @@
         android:layout_width="40dp"
         android:textSize="30sp"
         android:layout_above="@+id/meaadd"
-        android:layout_alignStart="@+id/vegsub" />
+        android:layout_alignStart="@+id/frusub" />
 
     <TextView
         android:text="Steve Smith"
@@ -134,7 +134,7 @@
         android:layout_marginTop="59dp"
         android:layout_marginEnd="18dp"
         android:layout_alignTop="@+id/table"
-        android:layout_toStartOf="@+id/vegsub" />
+        android:layout_toStartOf="@+id/frusub" />
 
     <TableLayout
         android:id="@+id/table"
