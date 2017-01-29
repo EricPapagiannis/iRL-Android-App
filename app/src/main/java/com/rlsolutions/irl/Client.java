@@ -1,18 +1,50 @@
 package com.rlsolutions.irl;
 
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.io.PrintWriter;
 
 public class Client extends Account{
     private String number;
-    private ArrayList<Drug> drugs;
+    private HealthProvider hProv;
+    public String fName = "coversation_";
 
-    public Client(String userName, String password, String number, String fName, String lName){
+    public Client(String userName, String password, String number, String fName, String lName, HealthProvider h){
         super(userName, password, fName, lName);
         this.number = number;
+        this.hProv = h;
+
+        this.fName += userName + ".txt";
+
+        PrintWriter writer = null;
+        try{
+            writer = new PrintWriter(fName);
+        }catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
+
+        writer.close();
     }
 
-    public void setDrug(Drug d){
-        drugs.add(d);
+    public void writeTo(String message){
+        PrintWriter writer = null;
+        try{
+            FileWriter fw = new FileWriter(fName,true);
+            writer = new PrintWriter(fw);
+        }catch(FileNotFoundException e){
+            e.printStackTrace();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+
+        writer.println(fName + ": " + message);
+        writer.close();
+    }
+
+    public HealthProvider getProvider(){
+        return this.hProv;
     }
 
     public String getNumber() {
