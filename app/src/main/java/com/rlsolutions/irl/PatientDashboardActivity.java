@@ -55,6 +55,7 @@ public class PatientDashboardActivity extends AppCompatActivity {
 
     void updateBar() {
         prg.setProgress(100*(this.servingVeg + this.servingFru + this.servingMea + this.servingGra + this.servingDai)/(this.totalServings));
+        setContentView(R.layout.activity_patient_dashboard);
     }
 
     void addVeg() {
