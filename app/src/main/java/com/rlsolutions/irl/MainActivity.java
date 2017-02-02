@@ -1,12 +1,10 @@
 package com.rlsolutions.irl;
 
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
-import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +12,11 @@ import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
 import android.view.View;
 import android.widget.Button;
-import android.content.BroadcastReceiver;
+import android.widget.EditText;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -66,7 +68,49 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToHealthCareProvDashboard(View view) {
         Intent intent = new Intent(this, HealthCareProvDashboardActivity.class);
-        startActivity(intent);
+
+        EditText username = (EditText) findViewById(R.id.login_email);
+        EditText password = (EditText) findViewById(R.id.login_password);
+
+        String sUsername = username.toString();
+        String sPassword = password.toString();
+
+        boolean validUsername = false;
+        boolean validPassword = false;
+
+        try {
+            InputStream is = getAssets().open("HCPAccounts");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            String textToParse = new String(buffer);
+            ArrayList<HealthProvider> HCPList = new ArrayList<HealthProvider>();
+            HCPList = Functions.stringToHCPs(textToParse);
+            for (HealthProvider hcp: HCPList){
+                if (hcp.getUserName().equals(sUsername)){
+                    validUsername = true;
+                }
+                else if(hcp.getPassword().equals(sPassword)){
+                    validPassword = true;
+                }
+                if(validUsername && validPassword){
+                    break;
+                }
+            }
+            if (!validUsername) {
+                username.setError("Invalid Username");
+            }
+            else if(!validPassword) {
+                password.setError("Invalid Password");
+            }
+            else {
+                startActivity(intent);
+            }
+        }
+        catch (IOException ex){
+            ex.printStackTrace();
+        }
     }
     public boolean isHCP(){
         //Some code

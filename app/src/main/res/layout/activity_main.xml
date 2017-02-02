@@ -32,15 +32,13 @@
         android:layout_centerHorizontal="true" />
 
 
-    <EditText android:id="@+id/enter_email"
+    <EditText android:id="@+id/login_email"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:hint="Email"
         android:layout_below="@+id/imageView"
         android:layout_marginTop="37dp"
-        android:layout_alignStart="@+id/editText"
-        android:layout_alignEnd="@+id/editText"
         android:fontFamily="sans-serif"
         android:textSize="20sp"
         android:textStyle="normal|bold" />
@@ -50,7 +48,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/login_password"
         android:hint="Password"
         android:textAlignment="center"
         android:layout_centerVertical="true"
@@ -58,18 +56,6 @@
         android:fontFamily="sans-serif"
         android:textSize="20sp"
         android:textStyle="normal|bold" />
-
-    <Button
-        android:layout_height="wrap_content"
-        android:text="Login as HCP"
-        android:id="@+id/button"
-        android:onClick="goToHealthCareProvDashboard"
-        android:layout_marginTop="19dp"
-        android:layout_width="165dp"
-        android:layout_below="@+id/editText"
-        android:layout_alignParentStart="true"
-        android:alpha="0.75"
-        />
 
     <Button
         android:layout_height="wrap_content"
@@ -87,11 +73,22 @@
         android:text="Notification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="58dp"
         android:id="@+id/notif"
         android:onClick="getNotification"
-        android:alpha="0.75"/>
+        android:alpha="0.75"
+        android:layout_above="@+id/CopyrightInfo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="57dp" />
+
+    <Button
+        android:layout_height="wrap_content"
+        android:text="Login as HCP"
+        android:id="@+id/button"
+        android:onClick="goToHealthCareProvDashboard"
+        android:layout_marginTop="17dp"
+        android:layout_width="165dp"
+        android:alpha="0.75"
+        android:layout_below="@+id/login_password"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
