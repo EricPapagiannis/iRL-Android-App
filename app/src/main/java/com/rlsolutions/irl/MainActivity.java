@@ -30,36 +30,29 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btn=(Button)findViewById(R.id.notif);
     }
-    public void getNotification(View view)
-    {
-        Uri alarmSound= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        NotificationCompat.Builder notificBulider= (NotificationCompat.Builder) new
+    public void getNotification(View view) {
+        Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        NotificationCompat.Builder notificBulider = (NotificationCompat.Builder) new
                 NotificationCompat.Builder(this)
                 .setSound(alarmSound)
                 .setAutoCancel(true)
-                .setVibrate(new long[] {0,1000,1000,1000,1000})
+                .setVibrate(new long[]{0, 1000, 1000, 1000, 1000})
                 .setSmallIcon(R.drawable.ic_stat_name)
                 .setContentTitle("Upcoming Meal!")
                 .setContentText("Please eat your Vegetable and Meat food group(s)")
                 .setTicker("Eat it at 12:30pm");
 
         Intent nextpage = new Intent(this, HealthCareProvDashboardActivity.class);
-        TaskStackBuilder tStackBuilder=TaskStackBuilder.create(this);
+        TaskStackBuilder tStackBuilder = TaskStackBuilder.create(this);
         tStackBuilder.addParentStack(HealthCareProvDashboardActivity.class);
         tStackBuilder.addNextIntent(nextpage);
-        PendingIntent pendingIntent=tStackBuilder.getPendingIntent(0,
+        PendingIntent pendingIntent = tStackBuilder.getPendingIntent(0,
                 PendingIntent.FLAG_UPDATE_CURRENT);
         notificBulider.setContentIntent(pendingIntent);
-        notificationManager =(NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(notifID,notificBulider.build());
-        isNotificActive=true;
-
-
-
-
-
+        notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(notifID, notificBulider.build());
+        isNotificActive = true;
     }
-
 
     public void goToPatientDashboard(View view) {
         Intent intent = new Intent(this, PatientDashboardActivity.class);
@@ -72,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
         EditText username = (EditText) findViewById(R.id.login_email);
         EditText password = (EditText) findViewById(R.id.login_password);
 
-        String sUsername = username.toString();
-        String sPassword = password.toString();
+        String sUsername = username.getText().toString();
+        String sPassword = password.getText().toString();
 
         boolean validUsername = false;
         boolean validPassword = false;
@@ -85,13 +78,15 @@ public class MainActivity extends AppCompatActivity {
             is.read(buffer);
             is.close();
             String textToParse = new String(buffer);
-            ArrayList<HealthProvider> HCPList = new ArrayList<HealthProvider>();
+
+            ArrayList<HealthProvider> HCPList;
             HCPList = Functions.stringToHCPs(textToParse);
+
             for (HealthProvider hcp: HCPList){
                 if (hcp.getUserName().equals(sUsername)){
                     validUsername = true;
                 }
-                else if(hcp.getPassword().equals(sPassword)){
+                if(hcp.getPassword().equals(sPassword)){
                     validPassword = true;
                 }
                 if(validUsername && validPassword){
@@ -112,25 +107,5 @@ public class MainActivity extends AppCompatActivity {
             ex.printStackTrace();
         }
     }
-    public boolean isHCP(){
-        //Some code
-        return true;
-    }
-    /*
-    public void Navigate(View view){
-        if (login()) {
-            if (isHCP()) {
-                goToHealthCareProvDashboard();
-            } else {
-                goToPatientDashboard();
-            }
-        } else {
-        }
-    }
-
-    private boolean login() {
-        return true;
-    }
-    */
 }
 

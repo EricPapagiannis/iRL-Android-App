@@ -1,19 +1,20 @@
 package com.rlsolutions.irl;
 
 public class Account {
-    protected String userName;
-    protected String password;
-    protected String fName;
-    protected String lName;
+    private String userName;
+    private String password;
+    private String fName;
+    private String lName;
 
     public Account(String userName, String password, String fName, String lName){
         this.userName = userName;
+        this.password = password;
         this.fName = fName;
         this.lName = lName;
     }
 
     public String getUserName() {
-        return userName;
+        return this.userName;
     }
 
     public void setUserName(String userName) {
@@ -21,7 +22,7 @@ public class Account {
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public void setPassword(String password) {
@@ -29,7 +30,7 @@ public class Account {
     }
 
     public String getfName() {
-        return fName;
+        return this.fName;
     }
 
     public void setfName(String fName) {
@@ -37,7 +38,7 @@ public class Account {
     }
 
     public String getlName() {
-        return lName;
+        return this.lName;
     }
 
     public void setlName(String lName) {

@@ -9,7 +9,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HealthProvider extends Account{
-    private String fName;
+    //private String fName;
+    private String lName;
     private ArrayList<Client> clients;
     private Map<String,String> foodMap = new HashMap<String,String>();
 
@@ -25,11 +26,11 @@ public class HealthProvider extends Account{
     }
 
     public void writeTo(String userName, String message){
-        this.fName = foodMap.get(userName);
+        this.setfName(foodMap.get(userName));
 
         PrintWriter writer = null;
         try{
-            FileWriter fw = new FileWriter(fName,true);
+            FileWriter fw = new FileWriter(this.getfName(),true);
             writer = new PrintWriter(fw);
         }catch(FileNotFoundException e){
             e.printStackTrace();
@@ -37,7 +38,7 @@ public class HealthProvider extends Account{
             e.printStackTrace();
         }
 
-        writer.println(fName + ": " + message);
+        writer.println(this.getfName() + ": " + message);
         writer.close();
     }
 
@@ -49,4 +50,5 @@ public class HealthProvider extends Account{
     public ArrayList<Client> getClients() {
         return clients;
     }
+
 }
