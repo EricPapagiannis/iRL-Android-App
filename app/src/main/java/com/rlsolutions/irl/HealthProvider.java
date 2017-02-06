@@ -4,11 +4,15 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HealthProvider extends Account{
+public class HealthProvider extends Account implements Serializable{
+
+    private static final long serialVersionUID = 1L;
+
     //private String fName;
     private String lName;
     private ArrayList<Client> clients;
@@ -22,7 +26,7 @@ public class HealthProvider extends Account{
     public void addClient(String userName, String password, String fName, String lName){
         Client c = new Client(userName, password, fName, lName, this);
         clients.add(c);
-        foodMap.put(userName,c.fName);
+        foodMap.put(userName,c.conversation);
     }
 
     public void writeTo(String userName, String message){

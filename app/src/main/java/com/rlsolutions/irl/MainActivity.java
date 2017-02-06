@@ -82,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
             ArrayList<HealthProvider> HCPList;
             HCPList = Functions.stringToHCPs(textToParse);
 
+            HealthProvider passableHCP = null;
+
             for (HealthProvider hcp: HCPList){
                 if (hcp.getUserName().equals(sUsername)){
                     validUsername = true;
@@ -90,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                     validPassword = true;
                 }
                 if(validUsername && validPassword){
+                    passableHCP = hcp;
                     break;
                 }
             }
@@ -100,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 password.setError("Invalid Password");
             }
             else {
+                intent.putExtra("HCP", passableHCP);
                 startActivity(intent);
             }
         }

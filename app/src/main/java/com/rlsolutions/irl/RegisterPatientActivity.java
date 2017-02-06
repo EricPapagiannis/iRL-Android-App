@@ -23,14 +23,12 @@ public class RegisterPatientActivity extends AppCompatActivity {
         EditText lastNameText = (EditText) findViewById(R.id.enter_last_name);
         EditText userNameText = (EditText) findViewById(R.id.enter_username);
         EditText passwordText = (EditText) findViewById(R.id.enter_password);
-
-        // optional information
         EditText confirmPasswordText = (EditText) findViewById(R.id.confirm_password);
 
-        String lastName = lastNameText.getText().toString();
-        String firstName = firstNameText.getText().toString();
         String userName = userNameText.getText().toString();
         String password = passwordText.getText().toString();
+        String firstName = firstNameText.getText().toString();
+        String lastName = lastNameText.getText().toString();
         String confirmPassword = confirmPasswordText.getText().toString();
 
         if (firstName.equals("")) {
@@ -42,8 +40,12 @@ public class RegisterPatientActivity extends AppCompatActivity {
         } else if (!(confirmPassword.equals(password))) {
             confirmPasswordText.setError("Passwords dont match");
         } else {
+            //Retrieve the HCP object, pass it into the instantiation of the client, then pass the client
+            //to the next activity
             Intent intent = new Intent(this, HealthCareProvDashboardActivity.class);
-            //Client client = new Client(userName, password, firstName, lastName,HealthProvider h = new HealthProvider("k","m","k","m") );
+            HealthProvider hcp = (HealthProvider) intent.getSerializableExtra("HCP");
+            Client client = new Client(userName, password, firstName, lastName, hcp);
+            intent.putExtra("Client key", client);
             Toast.makeText(getApplicationContext(), "Patient Registered", Toast.LENGTH_SHORT).show();
             startActivity(intent);
         }

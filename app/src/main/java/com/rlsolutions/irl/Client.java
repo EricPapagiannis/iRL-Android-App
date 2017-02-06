@@ -3,33 +3,37 @@ package com.rlsolutions.irl;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.io.PrintWriter;
 
-public class Client extends Account{
+public class Client extends Account implements Serializable{
+
+    private static final long serialVersionUID = 1L;
+
     private HealthProvider hProv;
-    public String fName = "coversation_";
+    public String conversation = "conversation_";
 
     public Client(String userName, String password, String fName, String lName, HealthProvider h){
         super(userName, password, fName, lName);
         this.hProv = h;
-
-        this.fName += userName + ".txt";
+        /*
+        this.conversation += userName + ".txt";
 
         PrintWriter writer = null;
         try{
-            writer = new PrintWriter(fName);
+            writer = new PrintWriter(conversation);
         }catch(FileNotFoundException e){
             e.printStackTrace();
         }
-
         writer.close();
+        */
     }
 
     public void writeTo(String message){
         PrintWriter writer = null;
         try{
-            FileWriter fw = new FileWriter(fName,true);
+            FileWriter fw = new FileWriter(conversation,true);
             writer = new PrintWriter(fw);
         }catch(FileNotFoundException e){
             e.printStackTrace();
@@ -37,7 +41,7 @@ public class Client extends Account{
             e.printStackTrace();
         }
 
-        writer.println(fName + ": " + message);
+        writer.println(conversation + ": " + message);
         writer.close();
     }
 
